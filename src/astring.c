@@ -1,19 +1,14 @@
 #include<string.h>
 #include<stdlib.h>
 
-#include<tstring.h>
+#include<astring.h>
 
 #ifdef NULL
 #undef NULL
 #define NULL '\0'
 #endif
 
-enum TStringVariant {
-	STRAIGHT,
-	REFERENCE
-};
-
-struct tstring {
+struct astring {
 	unsigned short length;
 	char* value;
 };
@@ -24,7 +19,7 @@ void string_cstring_copyterm(char* to, char* from, int length){
 }
 
 String string_alloc(int length){
-	String str = malloc(sizeof(struct tstring));
+	String str = malloc(sizeof(struct astring));
 	str->value = malloc(sizeof(char) * (length+1));
 	str->length = length;
 	return str;

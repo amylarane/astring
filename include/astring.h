@@ -1,7 +1,7 @@
-#ifndef __TSTRING_H
-#define __TSTRING_H
+#ifndef __ASTRING_H
+#define __ASTRING_H
 
-typedef struct tstring* String;
+typedef struct astring* String;
 String string_from_cstring(char* cstring);
 String string_from_array(char* array, int length);
 
@@ -14,4 +14,4 @@ String string_substring(String string, int index, int length);
 String string_copy(String string);
 String string_delete(String string);
 
-#endif
+#endif //ASTRING_H
