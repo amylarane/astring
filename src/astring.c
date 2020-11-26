@@ -3,11 +3,6 @@
 
 #include<astring.h>
 
-#ifdef NULL
-#undef NULL
-#define NULL '\0'
-#endif
-
 struct astring {
 	unsigned short length;
 	char* value;
@@ -44,24 +39,22 @@ String string_from_array(char* value, int length){
 }
 
 const char* const string_cstring(String string){
-	if(string){
-		return string->value;
-	}
-
-	return NULL;
+	return string ?
+		string->value :
+		NULL;
 }
 
 const unsigned short string_length(String string){
 	if(string){
 		return string->length;
 	}
-	return NULL;
+	return (unsigned short)NULL;
 }
 
 char string_index(String string, int index){
 	if(string && index < string->length)
 		return string->value[index];
-	return NULL;
+	return (char)NULL;
 }
 
 String string_clone(String string){

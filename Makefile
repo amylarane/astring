@@ -11,7 +11,7 @@ libastring.so: $(OBJECTS)
 obj/%.o:src/%.c
 	@mkdir -p $(shell dirname $@)
 	@echo LINK $@
-	@gcc $(CFLAGS) -c -o $@ $^ $(LDFLAGS)
+	@gcc $(CFLAGS) -c -o $@ $^ 
 
 clean:
 	rm -rf obj libastring.so

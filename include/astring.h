@@ -1,11 +1,14 @@
 #ifndef __ASTRING_H
 #define __ASTRING_H
 
+typedef char* cstring;
+typedef const char* const cstrconst;
+
 typedef struct astring* String;
 String string_from_cstring(char* cstring);
 String string_from_array(char* array, int length);
 
-const char* const string_cstring(String str);
+cstrconst string_cstring(String str);
 const unsigned short string_length(String str);
 
 char string_index(String string, int index);
